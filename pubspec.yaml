@@ -30,7 +30,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Impact
+      fonts:
+        - asset: lib/Assets/font/impact.ttf
   assets:
     - lib/Assets/images/
     - lib/Assets/images/Ads/
     - lib/Assets/icons/
+    - lib/Assets/images/product_page2/

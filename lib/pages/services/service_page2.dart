@@ -28,7 +28,64 @@ class ServicePage2 extends StatelessWidget {
     final serviceTypes = service['serviceTypes'];
 
     return Scaffold(
-      appBar: AppBar(title: Text(service['serviceName'])),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: AppBar(
+          automaticallyImplyLeading: false,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.red, Colors.deepOrange],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.arrow_back, color: Colors.white),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                        Expanded(
+                          child: Container(
+                            // height: 45,
+                            margin: const EdgeInsets.only(left: 8),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                hintText: "Search...",
+                                hintStyle: TextStyle(color: Colors.grey),
+                                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.only(top: 10),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: Column(
         children: [
           // 👇 Insert the image carousel here

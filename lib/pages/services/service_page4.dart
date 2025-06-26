@@ -13,7 +13,7 @@ class ServicePage4 extends StatefulWidget {
     super.key,
     required this.topic,
     required this.subTopic,
-    required this.detail,
+    required this.detail, 
   });
 
   @override
